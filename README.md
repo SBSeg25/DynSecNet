@@ -1,5 +1,7 @@
 # DynSecNet: Orquestração Automatizada de Firewalls baseada em Fonte Única de Verdade
+
 [![Licença](https://img.shields.io/badge/License-GNU%20GPL-blue)](https://opensource.org/licenses/GNU)
+
 ### Objetivo do Artefato:
 Este artefato tem como objetivo exemplificar o funcionamento prático de um cenário real de aplicação do **DynSecNet**, em que duas reivindicações são simuladas e a execução destas são demonstradas.
 
