@@ -1,5 +1,4 @@
 import pynetbox
-import os
 import pprint
 import logging
 import json
