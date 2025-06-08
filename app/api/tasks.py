@@ -19,7 +19,6 @@ def add(x, y):
 def svc_deploy_task(service_id,event,data):
     print('Iniciando deploy')
     logger.info('Iniciando deploy para o Service: ' + str(service_id))
-
     # Recebe o tipo de evento e todos os dados da requisição anterior, necessário para consultar o prechange
     service_event = event
     request_data = data
