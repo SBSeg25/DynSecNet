@@ -7,7 +7,6 @@ from api.tasks import add, svc_deploy_task, sw_deploy_task, interface_deploy_tas
 from api.models import Sot
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from netmiko import ConnectHandler
 
 logger = logging.getLogger(__name__)
 
