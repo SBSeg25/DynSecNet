@@ -1,12 +1,10 @@
 import ipaddress
 import pynetbox
 import logging
-import os
 import ansible_runner
 from api.models import Sot
 from celery import shared_task
 from celery.utils.log import get_task_logger
-from netmiko import ConnectHandler, BaseConnection
 from ipaddress import ip_address, ip_interface, ip_network
 from jinja2 import Environment, FileSystemLoader
 
