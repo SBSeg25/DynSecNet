@@ -35,10 +35,8 @@ def svc_deploy_task(service_id,event,data):
     if service_event == 'updated':
         task_result = del_one_rule_service(service_id,request_data)
         task_result = add_one_rule_service(service_id)
-    #task_result = config_one_service(service_id,service_event,request_data)
     logger.info(task_result)
 
-#def config_one_service(service_id,ssh_key_path,event,request_data):
 def add_one_rule_service(service_id):
 
     # Inicializa cliente API da fonte de verdade
