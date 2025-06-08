@@ -86,7 +86,7 @@ echo -e '\e[33mIniciando componentes do Netbox\e[0m'
 docker compose up -d
 echo -e '\e[33mParando banco de dados do Netbox e copiando modelo pronto\e[0m'
 docker stop netbox-docker-postgres-1
-wget "https://github.com/SBSeg25/DynSecNet/raw/refs/heads/main/app/docs/contrib/netbox-postgresql.tar.gz" -O netbox-postgresql.tar.gz
+wget "https://github.com/SBSeg25/DynSecNet/raw/refs/heads/main/app/doc/contrib/netbox-postgresql.tar.gz" -O netbox-postgresql.tar.gz
 tar xzf netbox-postgresql.tar.gz
 echo -e 'Caso seja solicitado senha para esta etapa, a senha a senha do usuário (com capacidade de dar _sudo_) que está executando o experimento.\n'
 sudo rsync -Crazp var/lib/docker/volumes/netbox-docker_netbox-postgres-data/ /var/lib/docker/volumes/netbox-docker_netbox-postgres-data/
