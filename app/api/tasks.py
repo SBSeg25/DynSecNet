@@ -113,7 +113,6 @@ def add_one_rule_service(service_id):
     logger.info("{}: {}".format(runner.status, runner.rc))
     logger.info("Final status:")
     logger.info(runner.stats)
-
     return 1
 
 def del_one_rule_service(service_id,request_data):
