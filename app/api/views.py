@@ -90,13 +90,6 @@ def svc_deploy(request, format=None):
         task = svc_deploy_task.delay(service_id,service_event,request_data)
     
     return Response('')
-        #extravars=None
-        #private_data_dir = '/app/api/env'
-        #ssh_private_key=open('/home/net2d/.ssh/id_rsa').read()
-        #ssh_key_path = os.path.join(private_data_dir, 'ssh_key')
-        #with open(ssh_key_path, 'w') as f:
-        #    f.write(ssh_private_key)
-        #os.chmod(ssh_key_path, 0o600)
 
 # Reaplica as regras de iptables de todos os serviços
 @api_view(['GET'])
