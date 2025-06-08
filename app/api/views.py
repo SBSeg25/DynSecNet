@@ -13,8 +13,6 @@ from netmiko import ConnectHandler
 logger = logging.getLogger(__name__)
 
 @api_view(['POST','GET'])
-# @authentication_classes([TokenAuthentication, SessionAuthentication, BasicAuthentication])
-# @permission_classes([IsAuthenticated])
 def request_dump(request, format=None):
     content = {}
 
