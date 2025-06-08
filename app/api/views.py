@@ -25,8 +25,6 @@ def request_dump(request, format=None):
 
 
 @api_view(['GET'])
-# @authentication_classes([TokenAuthentication, SessionAuthentication, BasicAuthentication])
-# @permission_classes([IsAuthenticated])
 def sot_populate(request, format=None):
     content = {}
 
