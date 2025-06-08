@@ -17,8 +17,6 @@ def add(x, y):
 
 @shared_task
 def svc_deploy_task(service_id,event,data):
-    # Tentar acesso por chave ssh
-    # ssh_key_path = "/app/api/env/ssh_key"
     print('Iniciando deploy')
     logger.info('Iniciando deploy para o Service: ' + str(service_id))
 
