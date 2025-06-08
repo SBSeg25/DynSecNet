@@ -39,18 +39,8 @@ def sot_populate(request, format=None):
 
     return Response(content)
 
-# switch = {
-#     'device_type': 'cisco_nxos',
-#     'host': '143.54.100.69',
-#     'username': 'admin',
-#     'password': 'admin',
-#     'port': 22,
-#     'secret': 'admin',
-#     'conn_timeout': 60,
-# }
+
 @api_view(['POST'])
-# @authentication_classes([TokenAuthentication, SessionAuthentication, BasicAuthentication])
-# @permission_classes([IsAuthenticated])
 def sw_deploy(request, format=None):
     content = {}
 
