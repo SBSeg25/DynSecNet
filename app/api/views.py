@@ -162,11 +162,10 @@ def svc_ddos(request):
             'custom_fields': { 'source': str(source + '/32') },
             'protocol': proto,
             'ipaddresses': [ ip_id ],
-            'description': 'TrueState-SNA - DoS',
-            'comments': 'TrueState-SNA - DoS',
+            'description': 'DynSecNet - DoS',
+            'comments': 'DynSecNet - DoS',
             'tags': [ { 'id': 2 } ]
         }
         create_svc_ddos = netbox.ipam.services.create(payload)
         print(create_svc_ddos)
     return Response('DoS')
-#######################################
