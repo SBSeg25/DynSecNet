@@ -53,6 +53,12 @@ Os selos considerados são:
 
  1. **Opção 1:** Nesta opção, deve ser feito o download e importação de um Appliance Virtual (arquivo .ova) e execução do ambiente virtualizado utilizando VirtualBox. Para tanto, são necessários: Sistema Operacional Microsoft Windows 10 ou superior e distribuições Linux baseada em Ubuntu versão 20.04 ou mais recente: Ubuntu, Kubuntu, Xubuntu e variantes), processador 64 bits com no mínimo 4 núcleos e flag de virtualzação VT-x ativada na BIOS, 4GB de memória RAM para uso exclusivo no experimento, VirtualBox 7.1 ou superior com Extension Pack correspondente à versão do VirtualBox; ou
  2. **Opção 2:** Nesta opção, todo experimento será executado em ambiente local através do download e execução automatizada de todos os componentes utilizando Docker. Para isto, são necessários: Sistema Operacional Linux baseado em Ubuntu versão 20.04 ou mais recente: Ubuntu, Kubuntu, Xubuntu e variantes), processador 64 bits com no mínimo 4 núcleos, 4GB de memória RAM para uso exclusivo no experimento, Docker Engine versão 26 ou superior e alguns pacotes disponíveis no repositório oficial (ver dependências).
+
+Resumo dos requisitos:
+
+| Sistema Operacional     											                                              	     | Memória RAM |  Opção 1                | Opção 2           |
+|----------------------------------------------------------------------------------------|-------------|-------------------------|-------------------|
+| Microsoft Windows 10 ou superior, Linux baseado em Ubuntu versão 20.04 ou mais recente | 4GB         | VirtualBox 7+ e ExtPack | Docker Engine 26+ |
  
 ---
 
