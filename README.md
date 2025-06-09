@@ -69,6 +69,15 @@ Resumo dos requisitos:
  1. **Opção 1:** Cumpridos os requisitos descritos na seção anterior, referentes a **Opção 1**, esta opção não possui dependências.
  2. **Opção 2:** Cumpridos os requisitos descritos na seção anterior, referentes a **Opção 2**, é necessário certificar-se que o Docker Engine versão 26 ou superior esteja instalado conforme descrito na [página oficial da ferramenta](https://docs.docker.com/engine/install/ubuntu/), bem como a seção [postinstall](https://docs.docker.com/engine/install/linux-postinstall/), além dos pacotes __curl__, __rsync__, __wget__ e __git__ instalados.
 
+Resumo dos pacotes adicionais necessários (dependências):
+
+| Opção   | Pacotes adicionais necessários  |
+|---------|---------------------------------|
+| Opção 1 | Nenhum pacote adicional         |
+| Opção 2 | `curl`, `rsync`, `wget` e `git` |
+
+A instalação das dependências, caso necessário, ocorrerá automaticamente durante a execução do processo de execução do ambiente.
+
 ---
 
 # Preocupações com segurança
