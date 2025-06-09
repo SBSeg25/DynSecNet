@@ -33,11 +33,9 @@ def sot_populate(request, format=None):
 
     return Response(content)
 
-
 @api_view(['POST'])
-def sw_deploy(request, format=None):
-    content = {}
-
+def svc_deploy(request, format=None):
+    
     sot = Sot.objects.get(name="netbox-lab")
 
     netbox_url = "http://" + sot.hostname + ":" + str(sot.port) + "/"
@@ -47,36 +45,6 @@ def sw_deploy(request, format=None):
         netbox_url,
         token=netbox_token
     )
-
-    pprint.pprint(request.data)
-
-    if request.data['model'] == 'device':
-        device_id = request.data['data']['id']
-        logger.info("Abrindo tarefa para o Device: " + str(device_id))
-        task = sw_deploy_task.delay(device_id)
-    if request.data['model'] == 'interface':
-        interface_id = request.data['data']['id']
-        logger.info("Abrindo tarefa para a Interface: " + str(interface_id))
-        task = interface_deploy_task.delay(interface_id)
-    if request.data['model'] == 'ipaddress':
-        # Verifica se o IP o Ip estava atribuído para outra interface
-        if request.data["snapshots"]["prechange"]["assigned_object_id"] != request.data["snapshots"]["postchange"]["assigned_object_id"]:
-            if request.data["snapshots"]["prechange"]["assigned_object_id"] != None:
-                interface_id = request.data["snapshots"]["prechange"]["assigned_object_id"]
-                nb_interface = netbox.dcim.interfaces.get(id=interface_id)
-                nb_device = netbox.dcim.devices.get(id = nb_interface.device["id"])
-                # Remove IP da Interface antiga
-                logger.info("Reconfigurando Device: " + str(nb_device.id))
-                task = sw_deploy_task.delay(nb_device.id)
-        
-        # Se o IP está atualmente atríbuido para um Interface
-        if request.data["data"]["assigned_object"] != None:
-            interface_id = request.data["data"]["assigned_object_id"]
-            logger.info("Abrindo tarefa para a Interface: " + str(interface_id))
-            task = interface_deploy_task.delay(interface_id)            
-
-@api_view(['POST'])
-def svc_deploy(request, format=None):
     
     content = {}
     pprint.pprint(request.data)
