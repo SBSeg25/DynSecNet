@@ -1,5 +1,4 @@
-# DynSecNet: Orquestração Automatizada de Firewalls baseada em Fonte Única de Verdade
-
+# DynSecNet: Orquestração Automatizada e Adaptativa de Firewalls com Fonte Unica de Verdade
 [![Licença](https://img.shields.io/badge/License-GNU%20GPL-blue)](https://opensource.org/licenses/GNU)
 
 ### Objetivo do Artefato:
@@ -10,8 +9,7 @@ Este artefato tem como objetivo exemplificar o funcionamento prático de um cen�
 **No segundo cenário**, o servidor web possui um monitor de acessos por segundo e, ao detectar uma anomalia no número de requisições, um mecanismo interno no servidor aciona a API do **DynSecNet**, que processa a informação e cria um serviço do tipo DROP na SSoT com _source_ sendo o endereço IP do atacante, que por sua vez aciona de volta a API e desencadeia a criação de uma regra de **iptables** para o imediato bloqueio do IP do atacante, interrompendo o ataque.
 
 ### Resumo do Artigo:
-_A crescente complexidade dos ambientes de rede e a diversidade de dispositivos de seguran¸ca tornam o gerenciamento consistente de políticas de firewall uma tarefa desafiadora. Este trabalho apresenta a ferramenta DynSecNet, que propõe uma abordagem centralizada, segura e auditável para a gestão de firewalls baseada em uma Fonte Unica de Verdade (SSoT). A solução suporta múltiplos vendors, integra pipelines de automação e permite a adaptação automática de políticas com base em eventos
-e estados de rede. O artigo descreve a arquitetura da ferramenta, seus diferenciais técnicos e apresenta uma comparação com soluções relacionadas._
+_A gestão de firewalls em ambientes heterogêneos é crítica para a cibersegurançaa organizacional considerandos aspectos como configuraçõoes inconsistentes e respostas lentas a incidentes. Este trabalho apresenta a DynSecNet, uma ferramenta de código aberto que unifica políticas de segurança em uma fonte central, permitindo tradução automatizada para múltiplos fabricantes, resposta adaptativa a eventos (e.g., bloqueio de IPs maliciosos em <2s) e rastreabilidade integral. Avaliações experimentais demonstram sua eficácia na mitigação proativa de ataques e na redução de erros operacionais._
 
 ---
 
