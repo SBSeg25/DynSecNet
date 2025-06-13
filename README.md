@@ -147,15 +147,15 @@ Caso o retorno seja uma lista vazia, o Docker Engine estará pronto para a execu
 
 ### **Opção 2: Execução de contêineres localmente**
 
-Estando logado na máquina virtual recém importada, certificar-se de que há conexão com a internet e o Docker Engine está pronto:
-Abra o terminal e execute:
+Certificar-se de que há conexão com a internet e o Docker Engine está pronto:
+Abra um terminal local e execute:
 
 ```bash
 ping -c 3 github.com
 ```
 <img src="https://github.com/SBSeg25/DynSecNet/blob/main/app/doc/contrib/Screenshot_20250525_143939.png" alt="Import 05" style="float: left; width: 50%; height: auto;">
 
-Caso o retorno seja similar, há conexão com a internet através da máquina virtual.
+Caso o retorno seja similar, há conexão com a internet.
 
 ```bash
 docker ps -a
