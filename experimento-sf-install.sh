@@ -100,8 +100,8 @@ while [ "$( docker ps -a | grep 'netbox-docker-netbox-1' | grep -c 'healthy' )" 
 done 
 echo -e '\e[33mBaixando contêiner e iniciando solução\e[0m'
 docker run -d --network netbox-docker_default --name=net2d greentopcookie/dynsecnet:net2d
-echo -e '\e[33mBaixando contêiner e iniciando servidor nginx\e[0m'
-sleep 5
+echo -e '\e[33mBaixando contêiner e iniciando servidor nginx. Aguarde.\e[0m'
+sleep 15
 docker run --cap-add=NET_ADMIN -d --network netbox-docker_default --name=ubuntu-server greentopcookie/dynsecnet:server
 echo -e '\e[33mBaixando contêiner e iniciando cliente\e[0m'
 docker run -d --network netbox-docker_default --name=ubuntu-client greentopcookie/dynsecnet:client
