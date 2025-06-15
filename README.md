@@ -46,18 +46,19 @@ Os selos considerados são:
 #### O experimento possui duas opções disponíveis para execução, sendo:
 
  1. **Opção 1:** Imagem de **VirtualBox** com ambiente auto-contido já preparado para o experimento (testado em Sistema Operacional Microsoft Windows 10 ou superior e distribuições Linux baseada em Ubuntu versão 20.04 ou mais recente: Ubuntu, Kubuntu, Xubuntu e variantes) - o ambiente tem como usuário e senha **experimento/experimento**; ou
- 2. **Opção 2:** Download de todos os contêineres envolvidos e execução destes, localmente em um desktop ou laptop (testado em SO baseada em Ubuntu versão 20.04 ou mais recente: Ubuntu, Kubuntu, Xubuntu e variantes).
+ 2. **Opção 2:** Download de todos os contêineres envolvidos e execução destes, localmente em um desktop ou laptop (testado em Sistema Operacional não virtualizado, bare metal, baseado em Ubuntu versão 20.04 ou mais recente: Ubuntu, Kubuntu, Xubuntu e variantes, instalado).
  
 #### Requisitos de software e hardware para cada Opção de execução:
 
  1. **Opção 1:** Nesta opção, deve ser feito o download e importação de um Appliance Virtual (arquivo .ova) e execução do ambiente virtualizado utilizando VirtualBox. Para tanto, são necessários: Sistema Operacional Microsoft Windows 10 ou superior e distribuições Linux baseada em Ubuntu versão 20.04 ou mais recente: Ubuntu, Kubuntu, Xubuntu e variantes), processador 64 bits com no mínimo 4 núcleos e flag de virtualzação VT-x ativada na BIOS, 4GB de memória RAM para uso exclusivo no experimento, VirtualBox 7.1 ou superior com Extension Pack correspondente à versão do VirtualBox; ou
- 2. **Opção 2:** Nesta opção, todo experimento será executado em ambiente local através do download e execução automatizada de todos os componentes utilizando Docker. Para isto, são necessários: Sistema Operacional Linux baseado em Ubuntu versão 20.04 ou mais recente: Ubuntu, Kubuntu, Xubuntu e variantes), processador 64 bits com no mínimo 4 núcleos, 4GB de memória RAM para uso exclusivo no experimento, Docker Engine versão 26 ou superior e alguns pacotes disponíveis no repositório oficial (ver dependências).
+ 2. **Opção 2:** Nesta opção, todo experimento será executado em ambiente local através do download e execução automatizada de todos os componentes utilizando Docker. Para isto, são necessários: Sistema Operacional Linux, bare metal, baseado em Ubuntu versão 20.04 ou mais recente: Ubuntu, Kubuntu, Xubuntu e variantes), processador 64 bits com no mínimo 4 núcleos, 4GB de memória RAM para uso exclusivo no experimento, Docker Engine versão 26 ou superior e alguns pacotes disponíveis no repositório oficial (ver dependências).
 
-Resumo dos requisitos:
+Resumo dos requisitos de hardware e sistema operacional:
 
-| Sistema Operacional     											                                              	     | Memória RAM |  Opção 1                | Opção 2           |
-|----------------------------------------------------------------------------------------|-------------|-------------------------|-------------------|
-| Microsoft Windows 10 ou superior, Linux baseado em Ubuntu versão 20.04 ou mais recente | 4GB         | VirtualBox 7+ e ExtPack | Docker Engine 26+ |
+| Opção | Sistema Operacional     											                                              	     | Memória RAM |  Requisito              |
+|-------|----------------------------------------------------------------------------------------|-------------|-------------------------|
+| 1     | Microsoft Windows 10 ou superior, Linux baseado em Ubuntu versão 20.04 ou mais recente | 4GB         | VirtualBox 7+ e ExtPack |
+| 2     | Ubuntu bare metal versão 20.04 ou mais recente: Ubuntu, Kubuntu, Xubuntu e variantes   | 4GB         | Docker Engine 26+       |
  
 ---
 
@@ -70,12 +71,12 @@ Resumo dos requisitos:
 
 Resumo dos pacotes adicionais necessários (dependências):
 
-| Opção   | Pacotes adicionais necessários  |
-|---------|---------------------------------|
-| Opção 1 | Nenhum pacote adicional         |
-| Opção 2 | `curl`, `rsync`, `wget` e `git` |
+| Opção   | Pacotes adicionais necessários          |
+|---------|-----------------------------------------|
+| 1       | Nenhum pacote adicional                 |
+| 2       | Pacotes `curl`, `rsync`, `wget` e `git` |
 
-A instalação das dependências, caso necessário, ocorrerá automaticamente durante a execução do processo de execução do ambiente.
+A instalação das dependências, caso necessário, ocorrerá automaticamente durante a execução do processo de execução do ambiente, bastando seguir as instruções exibidas em tela.
 
 ---
 
@@ -111,7 +112,14 @@ Cabe ressaltar que todas as senhas, chaves de API e outros elementos secretos do
 
 <img src="https://github.com/SBSeg25/DynSecNet/blob/main/app/doc/contrib/Screenshot_20250525_141518.png" alt="Import 03" style="float: left; width: 50%; height: auto;">
 
+**4.1. Caso seja exibida uma mensagem de erro do VirtualBox referente a interface de rede, isto é porque a nomenclatura do dispositivo de rede local é diferente daquela existente no computador onde a imagem foi gerada. Basta selecionar a opção "Alterar as opções de rede" e salvar.**
+
+<img src="https://github.com/SBSeg25/DynSecNet/blob/main/app/doc/contrib/Screenshot_20250615_145822.png" alt="Import 43" style="float: left; width: 30%; height: auto;">
+
 5. Após a inicialização da VM, abra o terminal (atalho no desktop) e execute:
+
+<img src="https://github.com/SBSeg25/DynSecNet/blob/main/app/doc/contrib/Screenshot_20250512_153235.png" alt="Import 33" style="float: left; width: 10%; height: auto;">
+
 ```bash
 iniciar-experimento
 ```
@@ -120,7 +128,7 @@ iniciar-experimento
 
 ### **Opção 2: Execução de contêineres localmente**
 
-1. Em um terminal do Linux, executar:
+1. Em um terminal do Linux local, executar:
 ```bash
 wget "https://github.com/SBSeg25/DynSecNet/raw/refs/heads/main/experimento-sf-install.sh" -O "/tmp/experimento-sf-install.sh" ; chmod +x "/tmp/experimento-sf-install.sh" ; /tmp/experimento-sf-install.sh
 ```
@@ -136,7 +144,7 @@ _(Caso alguma dependência ou requisito anteriormente descrito não tenham sido 
 
 ### **Opção 1: Appliance de VirtualBox**
 
-Estando na máquina virtual recém importada, certificar-se de que há conexão com a internet e o Docker Engine está pronto:
+Estando na máquina virtual recém importada, certificar-se de que a máquina virtual possui conexão com a internet e o Docker Engine esteja pronto:
 
 ```bash
 ping -c 3 github.com
@@ -154,7 +162,7 @@ Caso o retorno seja uma lista vazia similar ao exemplo acima, o Docker Engine es
 
 ### **Opção 2: Execução de contêineres localmente**
 
-Certificar-se de que há conexão com a internet e o Docker Engine está pronto:
+Certificar-se de que localmente há conexão com a internet e o Docker Engine está pronto:
 Abra um terminal local e execute:
 
 ```bash
@@ -188,15 +196,15 @@ while read CID; do docker stop "${CID}"; done < <( docker ps -a | grep -v 'CONTA
 
 ## Reivindicações: Cenário 1 - Liberação automatizada de porta quando serviço estiver pronto
 
-#### **Opção 1: Appliance de VirtualBox**
+#### **Opção 1: No Appliance de VirtualBox**
 
-Abrir o terminal e executar o alias que verifica o estado do iptables do servidor:
+Com o Ambiente já iniciado na máquina virtual, abrir um terminal e executar o alias que verifica o estado do iptables do servidor:
 
 ```bash
 verificar-firewall-servidor
 ```
 
-#### **Opção 2: Execução de contêineres localmente**
+#### **Opção 2: Na execução de contêineres localmente**
 
 Abrir o terminal e executar o comando para inspecionar o estado do iptables do servidor:
 
