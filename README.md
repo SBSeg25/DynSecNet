@@ -9,7 +9,7 @@ Este artefato tem como objetivo exemplificar o funcionamento prático de um cen�
 **No segundo cenário**, o servidor web possui um monitor de acessos por segundo e, ao detectar uma anomalia no número de requisições, um mecanismo interno no servidor aciona a API do **DynSecNet**, que processa a informação e cria um serviço do tipo DROP na SSoT com _source_ sendo o endereço IP do atacante, que por sua vez aciona de volta a API e desencadeia a criação de uma regra de **iptables** para o imediato bloqueio do IP do atacante, interrompendo o ataque.
 
 ### Resumo do Artigo:
-_A gestão de firewalls em ambientes heterogêneos é crítica para a cibersegurançaa organizacional considerandos aspectos como configuraçõoes inconsistentes e respostas lentas a incidentes. Este trabalho apresenta a DynSecNet, uma ferramenta de código aberto que unifica políticas de segurança em uma fonte central, permitindo tradução automatizada para múltiplos fabricantes, resposta adaptativa a eventos (e.g., bloqueio de IPs maliciosos em <2s) e rastreabilidade integral. Avaliações experimentais demonstram sua eficácia na mitigação proativa de ataques e na redução de erros operacionais._
+_A gestão de firewalls em ambientes heterogêneos é crítica para a cibersegurança organizacional considerandos aspectos como configuraçõoes inconsistentes e respostas lentas a incidentes. Este trabalho apresenta a DynSecNet, uma ferramenta de código aberto que unifica políticas de segurança em uma fonte central, permitindo tradução automatizada para múltiplos fabricantes, resposta adaptativa a eventos (e.g., bloqueio de IPs maliciosos em <2s) e rastreabilidade integral. Avaliações experimentais demonstram sua eficácia na mitigação proativa de ataques e na redução de erros operacionais._
 
 ---
 
@@ -136,12 +136,19 @@ _(Caso alguma dependência ou requisito anteriormente descrito não tenham sido 
 
 ### **Opção 1: Appliance de VirtualBox**
 
-Estando na máquina virtual recém importada, abrir o terminal e executar:
+Estando na máquina virtual recém importada, certificar-se de que há conexão com a internet e o Docker Engine está pronto:
+
+```bash
+ping -c 3 github.com
+```
+<img src="https://github.com/SBSeg25/DynSecNet/blob/main/app/doc/contrib/Screenshot_20250525_143939.png" alt="Import 05" style="float: left; width: 50%; height: auto;">
+
+Caso o retorno seja similar, a máquina virtual possui conexão com a internet.
 
 ```bash
 docker ps -a
 ```
-Caso o retorno seja uma lista vazia, o Docker Engine estará pronto para a execução do experimento.
+Caso o retorno seja uma lista vazia similar ao exemplo acima, o Docker Engine estará pronto para a execução do experimento.
 
 <img src="https://github.com/SBSeg25/DynSecNet/blob/main/app/doc/contrib/Screenshot_20250525_142859.png" alt="Import 04" style="float: left; width: 50%; height: auto;">
 
@@ -155,12 +162,12 @@ ping -c 3 github.com
 ```
 <img src="https://github.com/SBSeg25/DynSecNet/blob/main/app/doc/contrib/Screenshot_20250525_143939.png" alt="Import 05" style="float: left; width: 50%; height: auto;">
 
-Caso o retorno seja similar, há conexão com a internet.
+Caso o retorno seja similar, o dispositivo local possui conexão com a internet.
 
 ```bash
 docker ps -a
 ```
-Caso o retorno seja uma lista vazia, o Docker Engine estará pronto para a execução do experimento.
+Caso o retorno seja uma lista vazia, o Docker Engine local estará pronto para a execução do experimento.
 
 <img src="https://github.com/SBSeg25/DynSecNet/blob/main/app/doc/contrib/Screenshot_20250525_143226.png" alt="Import 06" style="float: left; width: 50%; height: auto;">
 
@@ -200,6 +207,7 @@ docker exec -it ubuntu-server iptables -nL
 Observar a implantação da regra de firewall permitindo o acesso à porta 80 tão logo o contêiner do servidor _nginx_ subiu e ficou pronto para aceitar requisições.
 
 <img src="https://github.com/SBSeg25/DynSecNet/blob/main/app/doc/contrib/Screenshot_20250525_150925.png" alt="Import 09" style="float: left; width: 50%; height: auto;">
+
 
 ## Reivindicações: Cenário 2 - Mitigação automatizada de ataque DoS
 
