@@ -190,7 +190,7 @@ while read CID; do docker stop "${CID}"; done < <( docker ps -a | grep -v 'CONTA
 
 #### Demonstração do Experimento utilizando o ambiente VirtualBox (Opção 1)
 
-[![Demonstracao Youtube](https://github.com/SBSeg25/DynSecNet/blob/main/app/doc/contrib/Screenshot_20250528_163204.png)](https://www.youtube.com/watch?v=R_sTcDdsZNg)
+[![Demonstracao Youtube](https://github.com/SBSeg25/DynSecNet/blob/main/app/doc/contrib/Screenshot_20250528_163204.jpg)](https://www.youtube.com/watch?v=R_sTcDdsZNg)
 
 #### O experimento possui duas opções disponíveis para execução, tendo cada uma delas os seguintes etapas para a obtenção das reivindicações:
 
