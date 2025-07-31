@@ -1,4 +1,4 @@
-# DynSecNet: Orquestração Automatizada e Adaptativa de Firewalls com Fonte Unica de Verdade
+# Gerenciamento Integrado e Adaptativo de Firewalls baseado na Fonte Única de Verdade (SSoT) da Rede
 [![Licença](https://img.shields.io/badge/License-GNU%20GPL-blue)](https://opensource.org/licenses/GNU)
 
 ### Objetivo do Artefato:
