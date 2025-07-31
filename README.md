@@ -311,14 +311,18 @@ Recebe informações pelo sensor (porta, protocolo e endereço IP do atacante), 
 # Ambientes de testes
 Para garantir a compatibilidade e o desempenho ideais, os testes foram realizados no seguinte ambiente:
 Hardware
+
 Ambiente de teste 1:
  * Notebook: Dell G15 (Modelo 2023/2024, com RTX 4050)
    * Processador: Intel Core i7-13650HX 
    * Memória RAM: 16GB DDR5 @ 4800MHz (ou superior)
    * Placa de Vídeo: NVIDIA GeForce RTX 4050 Laptop GPU
    * Armazenamento: SSD NVMe de 512GB (ou superior)
+
+Software: 
  * Sistema Operacional: Windows 11 Home
   * Virtual box 7.0
+ 
  * Sistema Operacional: 24.04 LTS
   * Docker Engine 28.3.0
 
@@ -326,11 +330,12 @@ Ambiente de teste 2:
  * Desktop: 
    * Processador: AMD Ryzen 5 5500
    * Memória RAM: 8GB DDR4
-Software
+
+Software:
  * Sistema Operacional: Windows 11 Home
-  * Virtual box 7.0
+   * Virtual box 7.0
  * Sistema Operacional: 24.04 LTS
-  * Docker Engine 28.3.0
+   * Docker Engine 28.3.0
 
 # LICENSE
 
