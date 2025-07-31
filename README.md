@@ -321,6 +321,7 @@ Ambiente de teste 1:
   * Virtual box 7.0
  * Sistema Operacional: 24.04 LTS
   * Docker Engine 28.3.0
+
 Ambiente de teste 2:
  * Desktop: 
    * Processador: AMD Ryzen 5 5500
@@ -330,6 +331,7 @@ Software
   * Virtual box 7.0
  * Sistema Operacional: 24.04 LTS
   * Docker Engine 28.3.0
+
 # LICENSE
 
 Este projeto está licenciado sob a Licença GNU - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
