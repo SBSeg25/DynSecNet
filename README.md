@@ -26,8 +26,9 @@ Este README.md está organizado nas seguintes seções:
 7.  **Instalação:** Relação de opções para a realização do experimento, bem como as instruções individuais de cada opção.
 8.  **Teste mínimo:** Instruções para a execução das simulações.
 9.  **Experimentos:** Informações de replicação das reivindicações.
-10. **Documentação:** Documentação básica da aplicação. 
-11.  **Licença:** Informações sobre a licença do projeto.
+10. **Documentação:** Documentação básica da aplicação.
+11. **Ambiente de teste:** Ambientes que foram usados em testes.
+12.  **Licença:** Informações sobre a licença do projeto.
 
 ---
 
@@ -306,6 +307,18 @@ Busca serviços por 'id' cuja tag não seja DROP e aplica a tag ACCEPT. Esta aç
 
 #### `svc_ddos(request)`
 Recebe informações pelo sensor (porta, protocolo e endereço IP do atacante), busca no SSoT informações do device em questão com base no endereço IP de quem acionou a API, cria serviço no SSoT com tag do tipo DROP com as informações recebidas, atrelando ao device acionador, renderizando o template Ansible de criação de regra de firewall com base nas informações recebidas.
+
+# Ambientes de testes
+Para garantir a compatibilidade e o desempenho ideais, os testes foram realizados no seguinte ambiente:
+Hardware
+Ambiente de teste 1:
+ * Notebook: Dell G15 (Modelo 2023/2024, com RTX 4050)
+   * Processador: Intel Core i7-13650HX 
+   * Memória RAM: 16GB DDR5 @ 4800MHz (ou superior)
+   * Placa de Vídeo: NVIDIA GeForce RTX 4050 Laptop GPU
+   * Armazenamento: SSD NVMe de 512GB (ou superior)
+Software
+ * Sistema Operacional: Windows 11 Home e linux Ubuntu 24.04 LTS
 
 # LICENSE
 
