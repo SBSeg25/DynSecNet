@@ -314,12 +314,12 @@ Hardware
 
 #### Ambiente de teste 1:
 
-***Hardware***: Notebook: Dell G15 (Modelo 2023/2024, com RTX 4050) Processador: Intel Core i7-13650HX Memória RAM: 16GB DDR5 @ 4800MHz (ou superior) Placa de Vídeo: NVIDIA GeForce RTX 4050 Laptop. ***Software:*** Sistema Operacional: Windows 11 Home, Virtual box 7.0.
-***Software Secundário***: Sistema Operacional: 24.04 LTS, Docker Engine 28.3.0
+***Hardware***: Notebook: Dell G15 (Modelo 2023/2024, com RTX 4050) Processador: Intel Core i7-13650HX Memória RAM: 16GB DDR5 @ 4800MHz (ou superior) Placa de Vídeo: NVIDIA GeForce RTX 4050 Laptop. ***Software:*** Sistema Operacional: Windows 11 Home, Virtual box 7.0 e Python 3.12.13
+***Software Secundário***: Sistema Operacional: 24.04 LTS, Docker Engine 28.3.0 e Python 3.12.13
 
 #### Ambiente de teste 2:
  ***Hardware:*** Processador: AMD Ryzen 5 5500, Memória RAM: 8GB DDR4.
- ***Software:*** Sistema Operacional: 24.04 LTS, Docker Engine 28.3.0, Virtual box 7.0.
+ ***Software:*** Sistema Operacional: 24.04 LTS, Docker Engine 28.3.0, Virtual box 7.0 e Python 3.12.13
 
 # LICENSE
 
