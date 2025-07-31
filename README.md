@@ -333,10 +333,9 @@ Ambiente de teste 2:
 
 Software:
  * Sistema Operacional: Windows 11 Home
-  * Virtual box 7.0
- 
+   * Virtual box 7.0
  * Sistema Operacional: 24.04 LTS
-  * Docker Engine 28.3.0
+   * Docker Engine 28.3.0
 
 # LICENSE
 
