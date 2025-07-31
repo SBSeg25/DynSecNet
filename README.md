@@ -317,7 +317,6 @@ Ambiente de teste 1:
    * Memória RAM: 16GB DDR5 @ 4800MHz (ou superior)
    * Placa de Vídeo: NVIDIA GeForce RTX 4050 Laptop GPU
    * Armazenamento: SSD NVMe de 512GB (ou superior)
-Software
  * Sistema Operacional: Windows 11 Home
   * Virtual box 7.0
  * Sistema Operacional: 24.04 LTS
@@ -331,7 +330,6 @@ Software
   * Virtual box 7.0
  * Sistema Operacional: 24.04 LTS
   * Docker Engine 28.3.0
-  
 # LICENSE
 
 Este projeto está licenciado sob a Licença GNU - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
